@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="Primo">Questo è il primo paragrafo!</p>
+    <p id="Secondo">Questo è il secondo paragrafo!</p>
+    <p id="Terzo">Questo è il terzo paragrafo!</p>
+
+    <button id="cambiaColore" onclick="cambiarandom()">Cambia Colore</button>
+
+    <button id="grassetto" onclick="applicaGrassetto()">Grassetto</button>
+
+    <button id="toggle" onclick="toggle()">Visualizza/Nascondi</button>
+
+    <script>
+
+        function cambiarandom() {
+            document.getElementById('Primo').style.color = randomColor ();
+            document.getElementById('Secondo').style.color = randomColor ();
+            document.getElementById('Terzo').style.color = randomColor ();
+        }
+
+        function randomColor() {
+            return '#' + Math.floor(Math.random() * 16777215).toString(16);
+            
+        }
+
+        function applicaGrassetto() {
+            document.getElementById('Primo').style.fontWeight = ('Bold');
+            document.getElementById('Secondo').style.fontWeight = ('Bold');
+            document.getElementById('Terzo').style.fontWeight = ('Bold');
+            
+        }
+
+        let paragrafiVisibili = true;
+
+        function toggle() {
+
+            if (paragrafiVisibili) {
+                document.getElementById('Primo').style.display = 'none';
+                document.getElementById('Secondo').style.display = 'none';
+                document.getElementById('Terzo').style.display = 'none';
+                paragrafiVisibili = false;
+            } else {
+                document.getElementById('Primo').style.display = 'block';
+                document.getElementById('Secondo').style.display = 'block';
+                document.getElementById('Terzo').style.display = 'block';
+                paragrafiVisibili = true;                
+            }
+  
+        }
+
+    </script>
+
+</body>
+</html>
